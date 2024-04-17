@@ -1,5 +1,3 @@
-console.log('Some changes');
-
 const numArr = [5, 0, 10, -1];
 
 const bubbleSort = (array: number[]) => {
