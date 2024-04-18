@@ -5,16 +5,22 @@ const largeNumArr = [
   99, -52, -8, 18, -18, -89, 46, -87, 3, 82, 31, 23, 83, -95, -80
 ];
 
-const bubbleSort = (array: number[]): number[] => {
-  for (let i = array.length; i > 0; i--) {
-    for (let j = 0; j < i; j++) {
-      if (array[j] > array[j + 1]) {
-        [array[j], array[j + 1]] = [array[j + 1], array[j]];
+class Sorter {
+  constructor(public set: number[]) {
+    this.set = set;
+  }
+
+  bubbleSort = (): number[] => {
+    for (let i = this.set.length; i > 0; i--) {
+      for (let j = 0; j < i; j++) {
+        if (this.set[j] > this.set[j + 1]) {
+          [this.set[j], this.set[j + 1]] = [this.set[j + 1], this.set[j]];
+        }
       }
     }
-  }
-  return array;
-};
+    return this.set;
+  };
+}
 
-console.log(bubbleSort(numArr));
-console.log(bubbleSort(largeNumArr));
+const sort = new Sorter(numArr);
+console.log(sort.bubbleSort());
