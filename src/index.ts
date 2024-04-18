@@ -6,9 +6,7 @@ const largeNumArr = [
 ];
 
 class Sorter {
-  constructor(public set: number[]) {
-    this.set = set;
-  }
+  constructor(public set: number[]) {}
 
   bubbleSort = (): number[] => {
     for (let i = this.set.length; i > 0; i--) {
